@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row_table">
+    <table id="t1" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Control Id</th>
+          <th>Label</th>
+          <th>Type</th>
+          <th>Is Visible?</th>
+          <th>Is Read-Only?</th>
+          <th>Order</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+
+          <td>1</td>
+          <td><input type="text" name="labelrow1" id="label1" [(ngModel)]="model.labelrow1" (keypress)="label_Value"></td>
+          <td><select name="dropdownrow1" id="select1" [(ngModel)]="selectactive1" (ngModelChange)="getselecttypeValue($event,'select1')"> 
+            <option *ngFor="let n1 of selectype" [attr.value]="n1">{{n1}}</option>>
+          </select></td>
+          <td><input type="checkbox" name="visiblerow1" value="visible" [(ngModel)]="model.visible" (change)="checkboxes[$event.target.getAttribute('value')]=$event.target.checked"></td>
+          <td><input type="checkbox" name="readonlyrow1" value="readonly" [(ngModel)]="model.readonly"></td>
+          <td><select id="select2" [(ngModel)]="selectactive2" (ngModelChange)="getselectorderValue($event,'select2')"> 
+            <option *ngFor="let n2 of selecorder" [attr.value]="n2">{{n2}}</option>
+          </select></td>
+        </tr>
+
+        <tr>
+
+          <td>2</td>
+          <td><input type="text" name="labelrow2" id="label2" [(ngModel)]="model.labelrow2"></td>
+          <td><select id="select3" [(ngModel)]="selectactive1" (ngModelChange)="getselecttypeValue($event,'select3')"value="select">
+            <option *ngFor="let n1 of selectype" [attr.value]="n1">{{n1}}</option>
+            <!--<option name = "textboxrow2" value="textbox">TextBox</option>
+            <option name = "numberrow2" value="number" >Number</option>
+            <option name = "dropdownrow2" value="dropdown">Dropdown</option>
+            <option name = "checkboxrow2" value="checkbox">Checkbox</option>
+            <option name = "textarearow2"value="text area">Text area</option>-->
+          </select></td>
+          <td><input type="checkbox" name="visiblerow2" value="visible" [(ngModel)]="model.visiblerow2"></td>
+          <td><input type="checkbox" name="readonlyrow2" value="readonly" [(ngModel)]="model.readonlyrow2"></td>
+
+          <td><select id="select4">
+            <option value="select">select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select></td>
+        </tr>
+
+        <tr>
+          <td>3</td>
+          <td><input type="text" name="label1" id="label1"></td>
+          <td><select>
+            <option value="select">select</option>
+            <option value="textbox">TextBox</option>
+            <option value="number">Number</option>
+            <option value="dropdown">Dropdown</option>
+            <option value="checkboc">Checkbox</option>
+            <option value="text area">Text area</option>
+          </select></td>
+          <td><input type="checkbox" name="visible" value="visible"></td>
+          <td><input type="checkbox" name="readonly" value="readonly"></td>
+          <td><select>
+            <option value="select">select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select></td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary rg_button_style" (click)="onAdd()">Add</button>
+    <button type="submit" class="btn btn-primary rg_button_style" (click)="onNext()">Next</button>
+  </div>
